@@ -1,0 +1,33 @@
+spring:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri:   http://localhost:8080/auth/realms/FormulaTicket/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/auth/realms/FormulaTicket
+
+  application:
+    name: FormulaTickets
+  datasource:
+    password: 'filitto'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: 'root'
+    url: jdbc:mysql://localhost:3306/formula_ticket
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+
+
+server:
+  port: '443'
+  compression:
+    enabled: 'true'
+  ssl:
+    key-store: "C:/Users/steia/Documents/Intellij/keystore.p12"
+    key-store-password: filitto362
+    keyStoreType: PKCS12
+
+
+keycloak:
+  resource: springboot-keycloak
+
+
